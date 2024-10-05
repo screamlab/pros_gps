@@ -5,7 +5,7 @@ DOCKER_NETWORK='host'
 # Run the Docker container with the specified options
 docker run -it --rm \
     -v $(pwd)/pros_gps:/workspaces/pros_gps\
-    --device /dev/ttyUSB0:/dev/ttyUSB0 \
+    --device /dev/usb_gps:/dev/usb_gps \
     --network $DOCKER_NETWORK \
     $DOCKER_IMAGE \
     /bin/bash

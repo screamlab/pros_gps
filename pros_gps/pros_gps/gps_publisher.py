@@ -8,7 +8,7 @@ class GPSPublisher(Node):
     def __init__(self):
         super().__init__('gps_publisher')
         self.publisher_ = self.create_publisher(NavSatFix, 'gps_topic', 10)
-        self.ser = serial.Serial('/dev/ttyUSB0', 4800, timeout=5)  # Adjust as necessary
+        self.ser = serial.Serial('/dev/usb_gps', 4800, timeout=5)  # Adjust as necessary
         self.timer = self.create_timer(1.0, self.publish_gps_data)  # Publish every second
 
     def publish_gps_data(self):
